@@ -54,7 +54,9 @@ pipeline {
       }
       stage('Checking container vulnerabilities'){
           steps{
+            sh '''
               trivy image azure-vote-front
+              '''
           }
       }
       stage('Deploy to QA') {
