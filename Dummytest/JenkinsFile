@@ -9,7 +9,8 @@ pipeline {
         }
         stage('setvariable')
         {
-            script {
+            steps {
+              script {
                 def branch = env.BRANCH_NAME
                 switch(branch){
                     case 'master':
@@ -17,15 +18,20 @@ pipeline {
                     case 'dev':
                         url = 'https://dev.org'
                 }
+            }
+           
                 
                 
             }
         }
         stage('run my script')
         {
+            steps{
+
             sh '''
                 echo 'the URL is ${url} '
             '''
+            }
         }
     }
     
