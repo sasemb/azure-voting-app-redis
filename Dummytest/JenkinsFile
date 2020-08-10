@@ -34,7 +34,7 @@ pipeline {
             }
             }
         }
-        stage('run my script')
+        stage('run my scripts')
         {
             steps{
 
